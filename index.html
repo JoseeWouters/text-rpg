@@ -3,22 +3,73 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Hello Bulma!</title>
+		<title>Text rpg</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
 	<body>
-		<section class="section">
+		<div class="section">
 			<div class="container">
-				<h1 class="title">
-					Hello World
+				<h1 class="title js-greeting">
+					Hi!
 				</h1>
-				<p class="subtitle">
-					My first website with <strong>Bulma</strong>!
-				</p>
+				<section class="part-one">
+					<h2 class="subtitle">
+						What's your name?
+					</h2>
+					<div class="field has-addons">
+						<div class="control has-icons-left">
+							<input class="input js-name" type="text" placeholder="Name">
+							<span class="icon is-left">
+								<i class="fas fa-user"></i>
+							</span>
+						</div>
+						<div class="control">
+						<a class="button" onclick="saveName()">Submit</a>
+						</div>
+					</div>
+				</section>
+				<section class="part-two">
+					<h2 class="subtitle">
+						Wanna play a game?
+					</h2>
+					<div class="control">
+						<label class="radio">
+							<input type="radio" name="play" id="yes">
+							Yes
+						</label>
+						<label class="radio">
+							<input type="radio" name="play" id="no">
+							No
+						</label>
+					</div>
+				</section>
+				<section class="no-play">
+						<p>Too bad. Come back another time.</p>
+				</section>
+				<section class="go-play">
+					<h1 class="title">Okay, let's go!</h1>
+					<h2 class="subtitle">
+						You're in a room...
+					</h2>
+					<div class="intro">
+						<p>The room is dark. What do you do?</p>
+						<textarea class="textarea js-answer"></textarea>
+						<div class="control">
+							<button class="button" onclick="checkAnswer()">Submit</button>
+						</div>
+					</div>
+				</section>
+				<section class="part-three">
+					<div class="light-on">
+						<p>
+							The room has a door and a window. Against one of the walls is a couch and on the opposite side is a cabinet with a tv. There's a carpet on the floor and a light bulb on the ceiling.
+						</p>
+					</div>
+				</section>
 			</div>
-		</section>
+		</div>
 
 		<script src="/js/script.js"></script>
 	</body>
