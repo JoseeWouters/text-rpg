@@ -1,32 +1,43 @@
-var playerNameInput;
-var greeting = document.querySelector('.js-greeting');
+const intro = document.querySelector('.js-intro');
+const description = document.querySelector('.js-description');
+const input = document.querySelector('.js-input');
+const submit = document.querySelector('.js-submit');
+
+submit.addEventListener('click', saveName);
 
 function saveName() {
-    playerNameInput = document.querySelector('.js-name').value;
-    greeting.textContent = 'Hi ' + playerNameInput + '!';
-    document.querySelector('.part-one').style.display = 'none';
-    document.querySelector('.part-two').style.display = 'block';
+    let playerNameInput = input.value;
+    intro.textContent = `Hi ${playerNameInput}!`;
+    clearInput();
+    submit.removeEventListener('click', saveName, false);
+    wannaPlay();
 }
 
-var noPlay = document.querySelector('#no');
-noPlay.addEventListener('click', function() {
-    document.querySelector('.no-play').style.display = 'block';
-    document.querySelector('.part-two').style.display = 'none';
-    document.querySelector('.js-greeting').style.display = 'none';
-});
+function wannaPlay() {
+    description.textContent = `Wanna play a game?`;
+    input.placeholder = `Yes or no?`;
+    submit.addEventListener('click', function() {
+        yesOrNo();
+        clearInput();
+    });
+}
 
-var goPlay = document.querySelector('#yes');
-goPlay.addEventListener('click', function() {
-    document.querySelector('.go-play').style.display = 'block';
-    document.querySelector('.part-two').style.display = 'none';
-    document.querySelector('.js-greeting').style.display = 'none';
-});
-
-function checkAnswer() {
-    var answerField = document.querySelector('.js-answer').value;
-    var answerWord = 'light';
-    if (answerField.indexOf(answerWord) != -1) {
-        document.querySelector('.part-three').style.display = 'block';
-        document.querySelector('.go-play').style.display = 'none';
+function yesOrNo() {
+    if (input.value.includes('yes') || input.value.includes('Yes')) {
+        intro.textContent = `That's great!`
+    } else if (input.value.includes('no') || input.value.includes('No')) {
+        gameOver();
     }
+}
+
+function clearInput() {
+    input.value = ``;
+    input.placeholder = ``;
+}
+
+function gameOver() {
+    intro.textContent = `Too bad!`;
+    description.textContent = `Why don't you come back another time?`;
+    input.style.display = 'none';
+    submit.style.display = 'none';
 }
