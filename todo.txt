@@ -1,0 +1,4 @@
+To do
+- make it possible to skip questions during development
+- review and improve code
+- add step back functionality
