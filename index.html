@@ -17,11 +17,11 @@
 					What's your name?
 				</h2>
 				<p class="has-text-danger js-response">
-					Tip: you can use the Enter key to submit your answer. Type 'Help' for more information.
+					Tip: you can use the Enter key to submit your answer. Check the 'i' for more information.
 				</p>
 				<div class="field">
 					<div class="control">
-						<textarea class="textarea js-input" type="text" rows="3" placeholder="Please fill in your name"></textarea>
+						<textarea class="textarea js-input" type="text" rows="3" placeholder="Please fill in your name" autofocus></textarea>
 					</div>
 				</div>
 				<div class="field">
@@ -34,6 +34,9 @@
 						</a>
 					</div>
 				</div>
+				<span class="icon js-info" onclick="help()">
+					<i class="fas fa-lg fa-info-circle"></i>
+				</span>
 			</div>
 		</section>
 
@@ -41,15 +44,31 @@
 			<div class="modal-background js-modal-background"></div>
 			<div class="modal-card">
 				<header class="modal-card-head">
-					<p class="modal-card-title">Help</p>
+					<h2 class="modal-card-title">Help</h2>
 				</header>
 				<section class="modal-card-body">
-					<p>
-						The room has a door and a window. Against one of the walls is a couch and on the opposite side is a locked cabinet with a tv. There's a carpet on the floor and a single light bulb on the ceiling.
-					</p>
+					<div class="content">
+						<p>
+						You can type in any command you want. Some commands will have effect and some won't.
+						Just try and have fun!
+						</p>
+						<div class="js-room">
+							<h3 class="subtitle">
+								The room
+							</h3>
+							<p>
+								The room has a door and a window. Against one of the walls is a couch and on the opposite side is a locked cabinet with a tv. There's a carpet on the floor and a single light bulb on the ceiling.
+							</p>
+						</div>
+					</div>
 				</section>
 				<footer class="modal-card-foot">
-					<button class="button js-modal-close">Cancel</button>
+					<button class="button js-modal-close">
+						<span>Close</span>
+						<span class="icon is-small">
+							<i class="fas fa-times"></i>
+						</span>
+					</button>
 				</footer>
 			</div>
 		</section>
